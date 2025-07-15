@@ -4,19 +4,6 @@ import API_BASE_URL from '../config/api';
 const Stakeholders = () => {
   const [stakeholders, setStakeholders] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedType, setSelectedType] = useState('all');
-
-  useEffect(() => {
-    fetchStakeholders();
-  }, []);
-
-  const fetchStakeholders = async () => {
-    try {
-      const response = await fetch(`${API_BASE_URL}/stakeholders`);{ useState, useEffect } from 'react';
-
-const Stakeholders = () => {
-  const [stakeholders, setStakeholders] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
 
   useEffect(() => {
@@ -25,7 +12,7 @@ const Stakeholders = () => {
 
   const fetchStakeholders = async () => {
     try {
-      const response = await fetch('https://hyphae-g5bkoxyb7-hyphae.vercel.app/stakeholders');
+      const response = await fetch(`${API_BASE_URL}/stakeholders`);
       const data = await response.json();
       setStakeholders(data);
     } catch (error) {
