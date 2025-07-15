@@ -1,4 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import API_BASE_URL from '../config/api';
+
+const Stakeholders = () => {
+  const [stakeholders, setStakeholders] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedType, setSelectedType] = useState('all');
+
+  useEffect(() => {
+    fetchStakeholders();
+  }, []);
+
+  const fetchStakeholders = async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/stakeholders`);{ useState, useEffect } from 'react';
 
 const Stakeholders = () => {
   const [stakeholders, setStakeholders] = useState([]);

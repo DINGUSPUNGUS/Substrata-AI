@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import API_BASE_URL from '../config/api';
 
 const Grants = () => {
   const [grants, setGrants] = useState([]);
@@ -10,7 +11,7 @@ const Grants = () => {
 
   const fetchGrants = async () => {
     try {
-      const response = await fetch('https://hyphae-g5bkoxyb7-hyphae.vercel.app/grants');
+      const response = await fetch(`${API_BASE_URL}/grants`);
       const data = await response.json();
       setGrants(data);
     } catch (error) {

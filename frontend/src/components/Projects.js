@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import API_BASE_URL from '../config/api';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -10,7 +11,7 @@ const Projects = () => {
 
   const fetchProjects = async () => {
     try {
-      const response = await fetch('https://hyphae-g5bkoxyb7-hyphae.vercel.app/projects');
+      const response = await fetch(`${API_BASE_URL}/projects`);
       const data = await response.json();
       setProjects(data);
     } catch (error) {

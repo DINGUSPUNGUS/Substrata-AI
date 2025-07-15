@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import API_BASE_URL from '../config/api';
 
 const Analytics = () => {
   const [analyticsData, setAnalyticsData] = useState({});
@@ -6,6 +7,16 @@ const Analytics = () => {
 
   useEffect(() => {
     fetchAnalyticsData();
+  }, []);
+
+  const fetchAnalyticsData = async () => {
+    try {
+      const [species, projects, stakeholders, grants] = await Promise.all([
+        fetch(`${API_BASE_URL}/analytics/species-summary`),
+        fetch(`${API_BASE_URL}/analytics/project-overview`),
+        fetch(`${API_BASE_URL}/analytics/stakeholder-summary`),
+        fetch(`${API_BASE_URL}/analytics/grant-overview`)
+      ]);
   }, []);
 
   const fetchAnalyticsData = async () => {

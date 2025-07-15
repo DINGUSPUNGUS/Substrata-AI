@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import API_BASE_URL from '../config/api';
 
 const Dashboard = () => {
   const [dashboardData, setDashboardData] = useState(null);
@@ -10,7 +11,7 @@ const Dashboard = () => {
 
   const fetchDashboardData = async () => {
     try {
-      const response = await fetch('https://hyphae-g5bkoxyb7-hyphae.vercel.app/analytics/dashboard');
+      const response = await fetch(`${API_BASE_URL}/analytics/dashboard`);
       const data = await response.json();
       setDashboardData(data);
     } catch (error) {

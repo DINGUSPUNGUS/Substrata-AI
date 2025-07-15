@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import API_BASE_URL from '../config/api';
 
 const FieldSurveys = () => {
   const [surveys, setSurveys] = useState([]);
@@ -11,7 +12,7 @@ const FieldSurveys = () => {
 
   const fetchSurveys = async () => {
     try {
-      const response = await fetch('https://hyphae-g5bkoxyb7-hyphae.vercel.app/field-surveys');
+      const response = await fetch(`${API_BASE_URL}/field-surveys`);
       const data = await response.json();
       setSurveys(data);
     } catch (error) {
@@ -161,6 +162,20 @@ const FieldSurveys = () => {
 
       {/* Map placeholder */}
       <div className="conservation-card rounded-lg p-6">
+        <h3 className="text-lg font-semibold text-white mb-4">Survey Locations</h3>
+        <div className="bg-slate-700 rounded-lg h-64 flex items-center justify-center">
+          <div className="text-center text-slate-400">
+            <span className="text-4xl block mb-2">🗺️</span>
+            <p>Interactive map showing survey locations</p>
+            <p className="text-sm mt-1">Map integration coming soon</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default FieldSurveys;
         <h3 className="text-lg font-semibold text-white mb-4">Observation Map</h3>
         <div className="h-64 bg-slate-700 rounded-lg flex items-center justify-center">
           <div className="text-center text-slate-400">
