@@ -176,17 +176,3 @@ const FieldSurveys = () => {
 };
 
 export default FieldSurveys;
-        <h3 className="text-lg font-semibold text-white mb-4">Observation Map</h3>
-        <div className="h-64 bg-slate-700 rounded-lg flex items-center justify-center">
-          <div className="text-center text-slate-400">
-            <span className="text-4xl block mb-2">🗺️</span>
-            <p>Interactive map showing survey locations</p>
-            <p className="text-sm">(Map integration coming soon)</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default FieldSurveys;
