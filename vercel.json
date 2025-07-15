@@ -8,14 +8,6 @@
         "maxLambdaSize": "15mb",
         "runtime": "python3.9"
       }
-    },
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "buildCommand": "npm run build",
-        "distDir": "build"
-      }
     }
   ],
   "functions": {
@@ -29,8 +21,40 @@
       "dest": "/api/index.py"
     },
     {
+      "src": "/docs",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/redoc", 
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/health",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/field-surveys(.*)",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/projects(.*)",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/stakeholders(.*)",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/grants(.*)",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/analytics(.*)",
+      "dest": "/api/index.py"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/frontend/$1"
+      "dest": "/index.html"
     }
   ]
 }
