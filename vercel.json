@@ -1,60 +1,7 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "api/index.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.9"
-      }
-    }
-  ],
   "functions": {
     "api/index.py": {
-      "maxDuration": 30
+      "runtime": "python3.9"
     }
-  },
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/docs",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/redoc", 
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/health",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/field-surveys(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/projects(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/stakeholders(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/grants(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/analytics(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
+  }
 }
